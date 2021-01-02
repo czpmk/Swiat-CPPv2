@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\world">
+      <UniqueIdentifier>{41df54f7-47c6-4739-bd02-2c439c1abcd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\world\organisms">
+      <UniqueIdentifier>{bc60c68d-b4f2-4d93-a46d-f24d4158e86c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\world\organisms\animals">
+      <UniqueIdentifier>{8d78713f-c65b-431a-af71-167faae06eb2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files\world</Filter>
+    </ClCompile>
+    <ClCompile Include="Organism.cpp">
+      <Filter>Source Files\world\organisms</Filter>
+    </ClCompile>
+    <ClCompile Include="Animal.cpp">
+      <Filter>Source Files\world\organisms\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="Lion.cpp">
+      <Filter>Source Files\world\organisms\animals</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="World.h">
+      <Filter>Source Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="Organism.h">
+      <Filter>Source Files\world\organisms</Filter>
+    </ClInclude>
+    <ClInclude Include="Animal.h">
+      <Filter>Source Files\world\organisms\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="Lion.h">
+      <Filter>Source Files\world\organisms\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="Comparison.h">
+      <Filter>Source Files\world</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
