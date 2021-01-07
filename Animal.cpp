@@ -1,10 +1,27 @@
-#include "Lion.h"
+#include "Animal.h"
+#include "World.h"
 #include <iostream>
+using namespace std;
 
-Lion::Lion(World* swiat) : Animal(swiat, 10, 5) {
+
+Animal::Animal(World* world, int strength, int initiative)
+	: Organism(world, strength, initiative) {}
+
+void Animal::action() {
+	setRandomLocationNearby();
+	if (collision()) {
+		attack(_world->organismAt(_newX, _newY));
+	}
+	if (this->_alive) {
+		_world->moveOrganism(this);
+	}
 }
 
-void Lion::print(std::ostream& out) {
-    out << 'L';
+void Animal::attack(Organism* defender) {
+	if (this->_strength >= defender->getStrength()) {
+		defender->defeat();
+	}
+	else {
+		this->defeat();
+	}
 }
-

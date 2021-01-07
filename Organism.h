@@ -7,45 +7,55 @@ class World;
 
 class Organism {
 protected:
-    World* _world;
-    int _oldX{};
-    int _oldY{};
-    int _newX{};
-    int _newY{};
-    int _initiative;
-    int _strength;
-    unsigned int _key{};
+	World* _world;
+	int _oldX = -1;
+	int _oldY = -1;
+	int _newX;
+	int _newY;
+	int _initiative;
+	int _strength;
+	unsigned int _key;
+	bool _alive = true;
+	bool _placed = false;
 
-    Organism(World*, int, int);
+	Organism(World*, int, int);
 
-    virtual void print(ostream& out) = 0;
+	virtual void print(ostream& out) = 0;
 
-    friend ostream& operator<<(ostream&, Organism*);
+	friend ostream& operator<<(ostream&, Organism*);
 
 public:
-    bool operator> (const Organism&) const;
+	virtual void action() = 0;
 
-    void addToWorld();
+	virtual void attack(Organism*) = 0;
 
-    virtual void action() = 0;
+	bool operator> (const Organism&) const;
 
-    virtual bool collision();
+	void addToWorld();
 
-    int getX() const;
+	virtual bool collision();
 
-    int getY() const;
+	void defeat();
 
-    int getOldX() const;
+	int getX() const;
 
-    int getOldY() const;
+	int getY() const;
 
-    void setKey(unsigned int);
+	int getOldX() const;
 
-    unsigned int getKey() const;
+	int getOldY() const;
 
-    int getInitiative() const;
+	void setKey(unsigned int);
 
-    void setRandomLocation();
+	unsigned int getKey() const;
 
-    void setRandomLocationNearby();
+	int getInitiative() const;
+
+	int getStrength() const;
+
+	void setRandomLocation();
+
+	void setRandomLocationNearby();
 };
+
+

@@ -12,13 +12,17 @@ public:
 
     ~World();
 
-    bool containsOrganismAt(int, int);
-
-    Organism* organismAt(int, int);
-
     int getSizeX() const;
 
     int getSizeY() const;
+
+    friend void Organism::addToWorld();
+
+    friend bool Organism::collision();
+
+    friend void Organism::defeat();
+
+    friend class Animal;
 
 private:
     set<Organism*, Comparison> organisms;
@@ -28,19 +32,21 @@ private:
     int _sizeX;
     int _sizeY;
 
+    bool containsOrganismAt(int, int);
+
+    Organism* organismAt(int, int);
+
     void printWorld();
 
     void nextTurn();
 
+    void runSimulation();
+
     void assignKey(Organism*);
 
-    friend void Organism::addToWorld();
-
-    void addOrganism(Organism*);
+    void placeOnTheBoard(Organism*);
 
     void moveOrganism(Organism*);
 
     void removeOrganism(Organism*);
-
-    void runSimulation();
 };
