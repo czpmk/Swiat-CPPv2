@@ -8,45 +8,100 @@
     <Filter Include="Source Files\world">
       <UniqueIdentifier>{41df54f7-47c6-4739-bd02-2c439c1abcd5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\world\organisms">
+    <Filter Include="Source Files\organisms">
       <UniqueIdentifier>{bc60c68d-b4f2-4d93-a46d-f24d4158e86c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\world\organisms\animals">
+    <Filter Include="Source Files\organisms\animals">
       <UniqueIdentifier>{8d78713f-c65b-431a-af71-167faae06eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\organisms\plants">
+      <UniqueIdentifier>{3b3376eb-517b-4f0d-8a0b-f42018420123}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>Source Files\world</Filter>
     </ClCompile>
     <ClCompile Include="Organism.cpp">
-      <Filter>Source Files\world\organisms</Filter>
+      <Filter>Source Files\organisms</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Animal.cpp">
-      <Filter>Source Files\world\organisms\animals</Filter>
+      <Filter>Source Files\organisms\animals</Filter>
     </ClCompile>
-    <ClCompile Include="Lion.cpp">
-      <Filter>Source Files\world\organisms\animals</Filter>
+    <ClCompile Include="Lew.cpp">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="Wilk.cpp">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="Owca.cpp">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="Zolw.cpp">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="Koliber.cpp">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="Plant.cpp">
+      <Filter>Source Files\organisms\plants</Filter>
+    </ClCompile>
+    <ClCompile Include="Trawa.cpp">
+      <Filter>Source Files\organisms\plants</Filter>
+    </ClCompile>
+    <ClCompile Include="Mlecz.cpp">
+      <Filter>Source Files\organisms\plants</Filter>
+    </ClCompile>
+    <ClCompile Include="Guarana.cpp">
+      <Filter>Source Files\organisms\plants</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h">
       <Filter>Source Files\world</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Organism.h">
-      <Filter>Source Files\world\organisms</Filter>
-    </ClInclude>
-    <ClInclude Include="Animal.h">
-      <Filter>Source Files\world\organisms\animals</Filter>
-    </ClInclude>
-    <ClInclude Include="Lion.h">
-      <Filter>Source Files\world\organisms\animals</Filter>
+      <Filter>Source Files\organisms</Filter>
     </ClInclude>
     <ClInclude Include="Comparison.h">
-      <Filter>Source Files\world</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Animal.h">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="Lew.h">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="Wilk.h">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="Owca.h">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="Zolw.h">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="Koliber.h">
+      <Filter>Source Files\organisms\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="Plant.h">
+      <Filter>Source Files\organisms\plants</Filter>
+    </ClInclude>
+    <ClInclude Include="Trawa.h">
+      <Filter>Source Files\organisms\plants</Filter>
+    </ClInclude>
+    <ClInclude Include="Mlecz.h">
+      <Filter>Source Files\organisms\plants</Filter>
+    </ClInclude>
+    <ClInclude Include="Guarana.h">
+      <Filter>Source Files\organisms\plants</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Swiat-CPPv2.rc" />
   </ItemGroup>
 </Project>

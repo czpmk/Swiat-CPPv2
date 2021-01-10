@@ -1,7 +1,7 @@
 #include <iostream>
 #include "World.h"
 #include "Organism.h"
-#include "Lion.h"
+
 using namespace std;
 
 World::World(int sizeX, int sizeY) {
@@ -9,6 +9,7 @@ World::World(int sizeX, int sizeY) {
 	_organismsLimit = UINT_MAX >> 4;
 	_sizeX = sizeX;
 	_sizeY = sizeY;
+	Organism::setPointerToWorld(this);
 	board = new Organism * *[_sizeY];
 	for (int i = 0; i < _sizeY; i++) {
 		board[i] = new Organism * [_sizeX];
@@ -17,13 +18,6 @@ World::World(int sizeX, int sizeY) {
 		}
 	}
 	printWorld();
-	for (int i = 0; i < 30; i++) {
-		Organism* o = new Lion(this);
-		o->addToWorld();
-		printWorld();
-		Sleep(300);
-	}
-	runSimulation();
 }
 
 World::~World() {
@@ -31,6 +25,22 @@ World::~World() {
 		delete[] board[i];
 	}
 	delete[] board;
+	auto organism = organismSet.begin();
+	while (organism != organismSet.end()) {
+		delete* organism;
+		organism = organismSet.erase(organism);
+	}
+}
+
+void World::placeOrganisms(int n) {
+
+	for (int i = 0; i < n; i++) {
+		Organism* org = Organism::getRandomAnimal();
+		org->addToWorld();
+	}
+
+	printWorld();
+	Sleep(300);
 }
 
 bool World::containsOrganismAt(int x, int y) {
@@ -51,6 +61,9 @@ int  World::getSizeY() const {
 
 void World::printWorld() {
 	system("CLS");
+	cout << "Projekt swiata, Michal Czapiewski [156221]" << endl;
+	cout << "Ilosc organizmow na planszy: " << organismSet.size() << endl;
+	cout << "[ENTER] - nastepna tura, [ESCAPE] - zakoncz" << endl;
 	int i = 0, j = 0;
 	cout << '#' << ' ';
 	while (i < _sizeX) {
@@ -73,21 +86,25 @@ void World::printWorld() {
 		cout << endl;
 		j++;
 	}
-	cout << "Ilosc organizmow na planszy: " << organisms.size() << endl;
 }
 
 void World::nextTurn() {
-	for (auto organism : organisms) {
-		organism->action();
+	auto organism = organismSet.begin();
+	while (organism != organismSet.end()) {
+		if ((*organism)->_alive) {
+			(*organism)->action();
+		}
+		organism++;
 	}
+	cleanOrganismSet();
 }
 
 void World::runSimulation() {
 	while (true) {
-		//if (GetAsyncKeyState(VK_RETURN)) {
-			this->nextTurn();
-			this->printWorld();
-		//}
+		if (GetAsyncKeyState(VK_RETURN)) {
+		this->nextTurn();
+		this->printWorld();
+		}
 		if (GetAsyncKeyState(VK_ESCAPE)) {
 			this->printWorld();
 			cout << "---KONIEC GRY---\n\n";
@@ -104,8 +121,9 @@ void World::assignKey(Organism* organism) {
 }
 
 void World::placeOnTheBoard(Organism* organism) {
+	assignKey(organism);
 	board[organism->getY()][organism->getX()] = organism;
-	organisms.insert(organism);
+	organismSet.insert(organism);
 }
 
 void World::moveOrganism(Organism* organism) {
@@ -115,5 +133,17 @@ void World::moveOrganism(Organism* organism) {
 
 void World::removeOrganism(Organism* organism) {
 	board[organism->getY()][organism->getX()] = nullptr;
-	organisms.erase(organism);
+}
+
+void World::cleanOrganismSet() {
+	auto organism = organismSet.begin();
+	while (organism != organismSet.end()) {
+		if (!(*organism)->_alive) {
+			delete* organism;
+			organism = organismSet.erase(organism);
+		}
+		else {
+			organism++;
+		}
+	}
 }

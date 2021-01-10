@@ -140,17 +140,37 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animal.cpp" />
-    <ClCompile Include="Lion.cpp" />
+    <ClCompile Include="Guarana.cpp" />
+    <ClCompile Include="Koliber.cpp" />
+    <ClCompile Include="Lew.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mlecz.cpp" />
     <ClCompile Include="Organism.cpp" />
+    <ClCompile Include="Owca.cpp" />
+    <ClCompile Include="Plant.cpp" />
+    <ClCompile Include="Trawa.cpp" />
+    <ClCompile Include="Wilk.cpp" />
     <ClCompile Include="World.cpp" />
+    <ClCompile Include="Zolw.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />
     <ClInclude Include="Comparison.h" />
-    <ClInclude Include="Lion.h" />
+    <ClInclude Include="Guarana.h" />
+    <ClInclude Include="Koliber.h" />
+    <ClInclude Include="Lew.h" />
+    <ClInclude Include="Mlecz.h" />
     <ClInclude Include="Organism.h" />
+    <ClInclude Include="Owca.h" />
+    <ClInclude Include="Plant.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Trawa.h" />
+    <ClInclude Include="Wilk.h" />
     <ClInclude Include="World.h" />
+    <ClInclude Include="Zolw.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Swiat-CPPv2.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

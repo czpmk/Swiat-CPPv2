@@ -4,8 +4,8 @@
 using namespace std;
 
 
-Animal::Animal(World* world, int strength, int initiative)
-	: Organism(world, strength, initiative) {}
+Animal::Animal(int strength, int initiative)
+	: Organism(strength, initiative) {}
 
 void Animal::action() {
 	setRandomLocationNearby();
@@ -17,11 +17,11 @@ void Animal::action() {
 	}
 }
 
-void Animal::attack(Organism* defender) {
-	if (this->_strength >= defender->getStrength()) {
-		defender->defeat();
-	}
-	else {
-		this->defeat();
+void Animal::defeat(Organism* aggressor) {
+	_alive = false;
+	if (this->_placed) {
+		_world->removeOrganism(this);
 	}
 }
+
+void Animal::victory(Organism* defender) {}

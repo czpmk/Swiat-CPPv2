@@ -3,12 +3,18 @@
 #include <set>
 #include "Comparison.h"
 class Organism;
+class Animal;
+class Plant;
 
 using namespace std;
 
 class World {
 public:
-    explicit World(int sizeX = 20, int sizeY = 20);
+    explicit World(int = 20, int = 20);
+
+    void placeOrganisms(int);
+
+    void runSimulation();
 
     ~World();
 
@@ -16,21 +22,19 @@ public:
 
     int getSizeY() const;
 
-    friend void Organism::addToWorld();
+    friend Organism;
 
-    friend bool Organism::collision();
+    friend Animal;
 
-    friend void Organism::defeat();
-
-    friend class Animal;
+    friend Plant;
 
 private:
-    set<Organism*, Comparison> organisms;
+    set<Organism*, Comparison> organismSet;
     Organism*** board;
     int _initiativeShift;
     unsigned int _organismsLimit;
-    int _sizeX;
-    int _sizeY;
+    int _sizeX = 20;
+    int _sizeY = 20;
 
     bool containsOrganismAt(int, int);
 
@@ -40,8 +44,6 @@ private:
 
     void nextTurn();
 
-    void runSimulation();
-
     void assignKey(Organism*);
 
     void placeOnTheBoard(Organism*);
@@ -49,4 +51,6 @@ private:
     void moveOrganism(Organism*);
 
     void removeOrganism(Organism*);
+
+    void cleanOrganismSet();
 };
