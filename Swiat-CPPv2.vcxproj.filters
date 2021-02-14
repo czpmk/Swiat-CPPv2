@@ -104,4 +104,7 @@
   <ItemGroup>
     <ResourceCompile Include="Swiat-CPPv2.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="gui.png" />
+  </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    World w = World(10, 10);
+    World w = World(40, 20);
     int n = -1;
     while (true) {
         cout << "Prosze podac liczbe organizmow <0, 200> >> ";

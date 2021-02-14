@@ -172,6 +172,9 @@
   <ItemGroup>
     <ResourceCompile Include="Swiat-CPPv2.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="gui.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

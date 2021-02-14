@@ -61,7 +61,7 @@ int  World::getSizeY() const {
 
 void World::printWorld() {
 	system("CLS");
-	cout << "Projekt swiata, Michal Czapiewski [156221]" << endl;
+	cout << "github.com/czpmk" << endl;
 	cout << "Ilosc organizmow na planszy: " << organismSet.size() << endl;
 	cout << "[ENTER] - nastepna tura, [ESCAPE] - zakoncz" << endl;
 	int i = 0, j = 0;
